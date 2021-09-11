@@ -1,0 +1,40 @@
+"SE14 5RP",51.481716,-0.046727,535731,177671
+"EN27AW",51.653416,-0.092482,532056,196681
+
+https://www.google.com/maps/place/@51.4821909,-0.0476362,59a,35y,101.08h,47.07t/data=!3m1!1e3!4m5!3m4!1s0x487602fd625557db:0x3575829729929419!8m2!3d51.4817164!4d-0.0467011
+
+https://www.google.com/maps/place/@51.653416,-0.092482,59a,35y,101.08h,47.07t/data=!3m1!1e3!4m5!3m4!1s0x487602fd625557db:0x3575829729929419!8m2!3d51.4817164!4d-0.0467011
+
+https://www.google.com/maps/@51.4820621,-0.0464902,3a,60y,257.69h,78.26t/data=!3m6!1e1!3m4!1sqUdZF3BPGWF5DV0Z5EdUcA!2e0!7i16384!8i8192
+
+https://www.google.com/maps/place/@51.6526588,-0.0928063,48a,35y,16.94h,62.66t/data=!3m1!1e3!4m5!3m4!1s0x487602fd625557db:0x3575829729929419!8m2!3d51.4817164!4d-0.0467011
+
+++
+
+https://www.google.com/maps/place/@<lat>,<long>,48a,35y,16.94h,62.66t/data=!3m1!1e3!4m5!3m4!1s0x487602fd625557db:0x3575829729929419!8m2!3d51.4817164!4d-0.0467011
+
+3a -> zoom? 
+90y -> Field of View 
+72h -> Heading (measured from North)
+90t -> Pitch
+
+
++++
+Latitude = North / South
+
+PRIME : 51.653416,-0.092482
+NORTH : https://www.google.com/maps/place/@51.6527967,-0.0925911,60a,35y,1.03h,52.76t/data=!3m1!1e3!4m5!3m4!1s0x48761f32ec17027d:0x5cd6ebf017bb05ed!8m2!3d51.6534256!4d-0.0924961
+DIFFERENCE: 0.00065  -  0.00012
+
+EAST : https://www.google.com/maps/place/@51.653416,-0.093132,60a,35y,90h,52.76t/data=!3m1!1e3!4m5!3m4!1s0x48761f32ec17027d:0x5cd6ebf017bb05ed!8m2!3d51.6534256!4d-0.0924961
+DIFFERENCE : 0.00015  -  0.00085 PLUS 90h
+
++++
+https://www.google.com/maps/place/@51.652766,-0.092482,60a,35y,1.03h,52.76t/data=!3m1!1e3!4m5!3m4!1s0x48761f32ec17027d:0x5cd6ebf017bb05ed!8m2!3d51.6534256!4d-0.0924961
+
+https://www.google.com/maps/place/Windmill+Hill,+Enfield+EN2+7AW/@51.6535663,-0.0933291,58a,35y,90h,52.76t/data=!3m1!1e3!4m5!3m4!1s0x48761f32ec17027d:0x5cd6ebf017bb05ed!8m2!3d51.6534256!4d-0.0924961
+
+
+PYTHON:
+https://postcodes.io/
+https://www.browserstack.com/guide/take-screenshot-with-selenium-python
