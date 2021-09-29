@@ -10,12 +10,11 @@ import time
 # Let's clear things out just to be tidy
 for filename in os.listdir("Pics"):
   file_path = os.path.join("Pics", filename)
-  os.unlink(file_path)
+  os.remove(file_path)
 
 for filename in os.listdir("Animations"):
   file_path = os.path.join("Animations", filename)
-  os.unlink(file_path)
-
+  os.remove(file_path)
 
 # Doing the do
 with open('building-data.csv') as csv_file:
@@ -46,7 +45,7 @@ with open('building-data.csv') as csv_file:
     for file in os.listdir("Pics"):
       if file.startswith(row[0]): 
         images.append(Image.open("Pics/" + file))
-    images[0].save("Animations/" + row[0] + "_ANIM.gif", save_all=True, append_images = images[1:], optimize = False, duration = 3000, loop = 0)
+    images[0].save("Animations/" + row[0] + "_ANIM.gif", save_all=True, append_images = images[1:], optimize = True, duration = 3000, loop = 0)
     images.clear()
 
 
