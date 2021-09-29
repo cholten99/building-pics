@@ -7,6 +7,17 @@ import time
 
 # SEE : https://pyautogui.readthedocs.io/en/latest/
 
+# Let's clear things out just to be tidy
+for filename in os.listdir("Pics"):
+  file_path = os.path.join("Pics", filename)
+  os.unlink(file_path)
+
+for filename in os.listdir("Animations"):
+  file_path = os.path.join("Animations", filename)
+  os.unlink(file_path)
+
+
+# Doing the do
 with open('building-data.csv') as csv_file:
   csv_reader = csv.reader(csv_file, delimiter=',')
   for row in csv_reader:
@@ -29,5 +40,13 @@ with open('building-data.csv') as csv_file:
     if os.path.exists(east_filename):
       os.remove(east_filename)
     pyautogui.screenshot(east_filename, region=(550,250, 1250, 850))
+    
+    # Make the animated gifs
+    images = []
+    for file in os.listdir("Pics"):
+      if file.startswith(row[0]): 
+        images.append(Image.open("Pics/" + file))
+    images[0].save("Animations/" + row[0] + "_ANIM.gif", save_all=True, append_images = images[1:], optimize = False, duration = 3000, loop = 0)
+    images.clear()
 
 
