@@ -2,6 +2,7 @@
 import pyautogui
 from PIL import Image
 import os
+import requests
 import csv
 import time
 
@@ -20,9 +21,18 @@ for filename in os.listdir("Animations"):
 with open('building-data.csv') as csv_file:
   csv_reader = csv.reader(csv_file, delimiter=',')
   for row in csv_reader:
+    # Get lat / long
+
+Might get better data from here : https://www.latlong.net/products
+Do as a batch and put them back in the file?
+
+    postcodeResponse = requests.get("https://api.postcodes.io/postcodes/" + row[1])
+    postcodeData = postcodeResponse.json()
+    lat = str(postcodeData["result"]["latitude"])
+    long = str(postcodeData["result"]["longitude"])
     # Do NORTH
     pyautogui.click(300, 80)    
-    north_location = "https://www.google.com/maps/place/@" + row[1] + "," + row[2] + ",60a,35y,1.03h,52.76t/data=!3m1!1e3!4m5!3m4!1s0x48761f32ec17027d:0x5cd6ebf017bb05ed!8m2!3d51.6534256!4d-0.0924961\n"
+    north_location = "https://www.google.com/maps/place/@" + lat + "," + long + ",60a,35y,1.03h,52.76t/data=!3m1!1e3!4m5!3m4!1s0x48761f32ec17027d:0x5cd6ebf017bb05ed!8m2!3d51.6534256!4d-0.0924961\n"
     north_filename = "Pics/" + row[0] + "_NORTH.png"
     pyautogui.write(north_location)
     time.sleep(10)
@@ -32,7 +42,7 @@ with open('building-data.csv') as csv_file:
 
     # Do EAST
     pyautogui.click(300, 80)    
-    east_location = "https://www.google.com/maps/place/@" + row[1] + "," + row[2] + ",60a,35y,90h,52.76t/data=!3m1!1e3!4m5!3m4!1s0x48761f32ec17027d:0x5cd6ebf017bb05ed!8m2!3d51.6534256!4d-0.0924961\n"
+    east_location = "https://www.google.com/maps/place/@" + lat + "," + long + ",60a,35y,90h,52.76t/data=!3m1!1e3!4m5!3m4!1s0x48761f32ec17027d:0x5cd6ebf017bb05ed!8m2!3d51.6534256!4d-0.0924961\n"
     east_filename = "Pics/" + row[0] + "_EAST.png"
     pyautogui.write(east_location)
     time.sleep(10)
